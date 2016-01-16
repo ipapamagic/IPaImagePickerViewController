@@ -1,2 +1,2 @@
 # IPaImagePickerViewController
-Image Picker like Facebook image picker
+Image Picker that can easily pick images in Photo Library

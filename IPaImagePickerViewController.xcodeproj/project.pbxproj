@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6E5C20561C1FB9F600250F8D /* IPaImagePickerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E5C20551C1FB9F600250F8D /* IPaImagePickerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6E61DDCB1C42782A004B44C9 /* IPaImagePickerContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E61DDCA1C42782A004B44C9 /* IPaImagePickerContentViewController.swift */; };
-		6EECE5AA1C42A7D6005FF26C /* IPaImagePickerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EECE5A91C42A7D6005FF26C /* IPaImagePickerViewController.storyboard */; };
 		6EECE5AC1C42A8CB005FF26C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EECE5AB1C42A8CB005FF26C /* Images.xcassets */; };
 		6EECE5B01C42C530005FF26C /* IPaImagePickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EECE5AF1C42C530005FF26C /* IPaImagePickerCollectionViewCell.swift */; };
 		6EECE5B21C4355D3005FF26C /* IPaImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EECE5B11C4355D3005FF26C /* IPaImagePickerViewController.swift */; };
@@ -20,7 +19,6 @@
 		6E5C20551C1FB9F600250F8D /* IPaImagePickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPaImagePickerViewController.h; sourceTree = "<group>"; };
 		6E5C20571C1FB9F600250F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E61DDCA1C42782A004B44C9 /* IPaImagePickerContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPaImagePickerContentViewController.swift; sourceTree = "<group>"; };
-		6EECE5A91C42A7D6005FF26C /* IPaImagePickerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = IPaImagePickerViewController.storyboard; sourceTree = "<group>"; };
 		6EECE5AB1C42A8CB005FF26C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6EECE5AF1C42C530005FF26C /* IPaImagePickerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPaImagePickerCollectionViewCell.swift; sourceTree = "<group>"; };
 		6EECE5B11C4355D3005FF26C /* IPaImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPaImagePickerViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +58,6 @@
 				6E61DDCA1C42782A004B44C9 /* IPaImagePickerContentViewController.swift */,
 				6EECE5B11C4355D3005FF26C /* IPaImagePickerViewController.swift */,
 				6EECE5AF1C42C530005FF26C /* IPaImagePickerCollectionViewCell.swift */,
-				6EECE5A91C42A7D6005FF26C /* IPaImagePickerViewController.storyboard */,
 				6EECE5AB1C42A8CB005FF26C /* Images.xcassets */,
 				6E5C20571C1FB9F600250F8D /* Info.plist */,
 			);
@@ -135,7 +132,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EECE5AA1C42A7D6005FF26C /* IPaImagePickerViewController.storyboard in Resources */,
 				6EECE5AC1C42A8CB005FF26C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

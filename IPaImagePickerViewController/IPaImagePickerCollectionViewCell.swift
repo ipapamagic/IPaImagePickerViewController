@@ -11,9 +11,9 @@ import UIKit
 class IPaImagePickerCollectionViewCell: UICollectionViewCell {
     var representedAssetIdentifier:String = ""
     
-    @IBOutlet var photoImageView: UIImageView!
-    @IBOutlet var markerLabel: UILabel!
-    @IBOutlet var highlightView: UIView!
+    lazy var photoImageView = UIImageView()
+    lazy var markerLabel = UILabel()
+    lazy var highlightView = UIView()
     var _markerNumber:Int = 0
     var markerNumber:Int {
         get {
@@ -27,6 +27,32 @@ class IPaImagePickerCollectionViewCell: UICollectionViewCell {
             
         }
     }
-    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        photoImageView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(photoImageView)
+        var viewsDict:[String:UIView] = ["view": photoImageView]
+        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[view]|",options:NSLayoutFormatOptions(rawValue: 0),metrics:nil,views:viewsDict))
+        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[view]|",options:NSLayoutFormatOptions(rawValue: 0),metrics:nil,views:viewsDict))
+        markerLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(markerLabel)
+        viewsDict = ["view": markerLabel]
+        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[view(30)]",options:NSLayoutFormatOptions(rawValue: 0),metrics:nil,views:viewsDict))
+        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:[view(>=30)]|",options:NSLayoutFormatOptions(rawValue: 0),metrics:nil,views:viewsDict))
+        markerLabel.textColor = UIColor.whiteColor()
+        markerLabel.backgroundColor = UIColor(red: 10.0/255.0, green: 138.0/255.0, blue: 246.0/255.0, alpha: 1)
+        markerLabel.textAlignment = .Center
+        
+        contentView.addSubview(highlightView)
+        viewsDict = ["view": highlightView]
+        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[view]|",options:NSLayoutFormatOptions(rawValue: 0),metrics:nil,views:viewsDict))
+        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[view]|",options:NSLayoutFormatOptions(rawValue: 0),metrics:nil,views:viewsDict))
+        
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+    }
     
 }

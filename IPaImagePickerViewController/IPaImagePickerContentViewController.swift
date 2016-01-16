@@ -11,7 +11,18 @@ import Photos
 
 class IPaImagePickerContentViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PHPhotoLibraryChangeObserver {
     
-    @IBOutlet var contentCollectionView: UICollectionView!
+    lazy var contentCollectionView: UICollectionView = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumInteritemSpacing = 5
+        flowLayout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: flowLayout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = UIColor.whiteColor()
+        
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
     lazy var photoLibrary = PHPhotoLibrary.sharedPhotoLibrary()
     lazy var currentAssetResult:PHFetchResult = {
         let allPhotosOptions = PHFetchOptions()
@@ -27,6 +38,16 @@ class IPaImagePickerContentViewController: UIViewController,UICollectionViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "onConfirm:")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: "onCancel:")
+        
+
+        view.addSubview(contentCollectionView)
+        let viewsDict = ["view": contentCollectionView]
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[view]|",options:NSLayoutFormatOptions(rawValue: 0),metrics:nil,views:viewsDict))
+        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[view]|",options:NSLayoutFormatOptions(rawValue: 0),metrics:nil,views:viewsDict))
+        
+        contentCollectionView.registerClass(IPaImagePickerCollectionViewCell.self, forCellWithReuseIdentifier: "photoCell")
         
         // Store the PHFetchResult objects and localized titles for each section.
 

@@ -29,6 +29,17 @@ class IPaImagePickerViewController: UINavigationController {
             viewController.imagePickNumber = newValue
         }
     }
+    init () {
+        let rootViewController = IPaImagePickerContentViewController()
+        
+        super.init(rootViewController: rootViewController)
+    }
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName:  nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
     func cancelPicker() {
         guard let imagePickerDelegate = imagePickerDelegate else {
             return

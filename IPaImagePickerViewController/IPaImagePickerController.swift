@@ -1,6 +1,6 @@
 //
-//  IPaImagePickerViewController.swift
-//  IPaImagePickerViewController
+//  IPaImagePickerController.swift
+//  IPaImagePickerController
 //
 //  Created by IPa Chen on 2016/1/11.
 //  Copyright © 2016年 A Magic Studio. All rights reserved.
@@ -9,10 +9,10 @@
 import UIKit
 import Photos
 protocol IPaImagePickerControllerDelegate {
-    func onIPaImagePicker(picker:IPaImagePickerViewController,pickImages:[PHAsset])
-    func onIPaImagePickerDidCancel(picker:IPaImagePickerViewController)
+    func onIPaImagePicker(_ picker:IPaImagePickerController,pickImages:[PHAsset])
+    func onIPaImagePickerDidCancel(_ picker:IPaImagePickerController)
 }
-class IPaImagePickerViewController: UINavigationController {
+class IPaImagePickerController: UINavigationController {
     var imagePickerDelegate: IPaImagePickerControllerDelegate?
     var imagePickNumber:Int {
         get {
@@ -34,7 +34,7 @@ class IPaImagePickerViewController: UINavigationController {
         
         super.init(rootViewController: rootViewController)
     }
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName:  nibNameOrNil, bundle: nibBundleOrNil)
     }
     required init?(coder aDecoder: NSCoder) {
@@ -46,7 +46,7 @@ class IPaImagePickerViewController: UINavigationController {
         }
         imagePickerDelegate.onIPaImagePickerDidCancel(self)
     }
-    func pickImages(images:[PHAsset]) {
+    func pickImages(_ images:[PHAsset]) {
         guard let imagePickerDelegate = imagePickerDelegate else {
             return
         }
